@@ -2,7 +2,7 @@ Pipeline:
   name: podinfo
 
 GitRepo:
-  name: podinfo-pipeline
+  name: podinfo
   gitProvider: GitHub
   path: brunoa19/jfrog-pipeline
   branches:
