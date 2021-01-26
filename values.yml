@@ -12,7 +12,7 @@ GitRepo:
 artifactoryIntegration: artifactory
 
 Image:
-  name: podinfo
+  name: podinfoImage
   sourceRepository: podinfo
   autoPull: false
 
@@ -24,7 +24,7 @@ DockerBuild:
   dockerImageTag: ${run_number}
 
 DockerPush:
-  name: podinfof
+  name: podinfoPush
   targetRepository: podinfo
 
 BuildInfo:
