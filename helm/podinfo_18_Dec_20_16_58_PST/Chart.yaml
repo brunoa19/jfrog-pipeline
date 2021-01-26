@@ -1,0 +1,6 @@
+apiVersion: v2
+name: podinfo
+description:  
+type: application
+version: v0.0.2
+appVersion: v2
