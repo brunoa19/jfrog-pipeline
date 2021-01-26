@@ -1,0 +1,32 @@
+Pipeline:
+  name: foo
+
+GitRepo:
+  name: JFrog Pipelines
+  gitProvider: GitHub
+  path: brunoa19/jfrog-pipeline
+  branches:
+    exclude: 'master'
+    include: {{gitBranch}}
+
+artifactoryIntegration: artifactory
+
+Image:
+  name: fooImage
+  sourceRepository: foo
+  autoPull: false
+
+DockerBuild:
+  name: foobuild
+  dockerImageName: foo
+  dockerFileName: foo
+  dockerFileLocation: '.'
+  dockerImageTag: ${run_number}
+
+DockerPush:
+  name: foopush
+  targetRepository: foo
+
+BuildInfo:
+  autoPublishBuildInfo: true
+  name: fooBuildInfo
