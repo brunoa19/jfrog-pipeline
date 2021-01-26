@@ -1,8 +1,8 @@
 Pipeline:
-  name: foo
+  name: podinfo
 
 GitRepo:
-  name: JFrog Pipelines
+  name: podinfo-pipeline
   gitProvider: GitHub
   path: brunoa19/jfrog-pipeline
   branches:
@@ -12,21 +12,21 @@ GitRepo:
 artifactoryIntegration: artifactory
 
 Image:
-  name: fooImage
-  sourceRepository: foo
+  name: podinfo
+  sourceRepository: podinfo
   autoPull: false
 
 DockerBuild:
-  name: foobuild
-  dockerImageName: foo
-  dockerFileName: foo
+  name: podinfobuild
+  dockerImageName: podinfo
+  dockerFileName: podinfo
   dockerFileLocation: '.'
   dockerImageTag: ${run_number}
 
 DockerPush:
-  name: foopush
-  targetRepository: foo
+  name: podinfof
+  targetRepository: podinfo
 
 BuildInfo:
   autoPublishBuildInfo: true
-  name: fooBuildInfo
+  name: podinfobuild
