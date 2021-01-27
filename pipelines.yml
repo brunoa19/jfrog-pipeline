@@ -82,7 +82,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: dbp_repo
+            - name: dbp_build_info
         execution:
           onExecute:
             - pip install shipa-ci
