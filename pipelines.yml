@@ -87,5 +87,7 @@ pipelines:
             - name: shipa
         execution:
           onExecute:
-            - pip install shipa-ci
-            - shipa-ci --server=$int_shipa_shipaserver --email=$int_shipa_shipaemail --password=$int_shipa_shipapassword --ca="$int_shipa_ca" app deploy --app=jfrog -i shipadev.jfrog.io/pipelines/jfrog-sample:4 --port=9898
+            - curl -s https://storage.googleapis.com/shipa-client/install.sh | bash
+            - shipa target add shipa $int_shipa_shipaserver -s 
+            - echo $int_shipa_shipapassword | shipa login $int_shipa_shipaemail
+            - shipa app deploy -a jfrog -i shipadev.jfrog.io/pipelines/jfrog-sample:6 --port=9898
