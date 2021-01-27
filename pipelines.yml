@@ -78,3 +78,11 @@ pipelines:
           outputResources:
             - name: dbp_promoted_build_info
 
+      - name: deploy_to_shipa
+        type: Bash
+        configuration:
+          inputResources:
+            - name: dbp_repo
+        execution:
+          onExecute:
+            - pip install shipa-ci
