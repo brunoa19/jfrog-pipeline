@@ -88,4 +88,4 @@ pipelines:
         execution:
           onExecute:
             - pip install shipa-ci
-            - shipa-ci --server=$int_shipa_shipaserver --email=$int_shipa_shipaemail --password=$int_shipa_shipapassword --ca=$int_shipa_ca app deploy --app=jfrog -i shipadev.jfrog.io/pipelines/jfrog-sample:4 --port=9898
+            - shipa-ci --server=$int_shipa_shipaserver --email=$int_shipa_shipaemail --password=$int_shipa_shipapassword --ca="$int_shipa_ca" app deploy --app=jfrog -i shipadev.jfrog.io/pipelines/jfrog-sample:4 --port=9898
