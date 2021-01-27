@@ -90,4 +90,4 @@ pipelines:
             - curl -s https://storage.googleapis.com/shipa-client/install.sh | bash
             - shipa target add shipa $int_shipa_shipaserver -s 
             - echo $int_shipa_shipapassword | shipa login $int_shipa_shipaemail
-            - shipa app deploy -a jfrog -i shipadev.jfrog.io/pipelines/jfrog-sample:6 --port=9898
+            - shipa app deploy -a jfrog -i shipadev.jfrog.io/pipelines/jfrog-sample --port=9898
